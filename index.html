@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitalVantage Health Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">VitalVantage</div>
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#products">Products</a>
+      <a href="#deep-dive">Deep Dive</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="cartButton" aria-label="Open cart" class="btn secondary">Cart (<span id="cartQty">0</span>)</button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1>VitalVantage Health Shop</h1>
+        <p>Premium health products for modern well-being: supplements, diagnostics, and wellness care.</p>
+        <button id="scrollProducts" class="btn primary">Shop Trending Products</button>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section class="search-filter">
+      <input id="searchInput" type="search" placeholder="Search products, vitamins, devices..." aria-label="Search products" />
+      <select id="categoryFilter" aria-label="Filter category">
+        <option value="all">All Categories</option>
+        <option value="supplement">Supplements</option>
+        <option value="device">Devices</option>
+        <option value="wellness">Wellness Kits</option>
+      </select>
+    </section>
+
+    <section id="products" class="products-section">
+      <h2>Featured Health Essentials</h2>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="deep-dive" class="deep-dive">
+      <h2>Deep Dive Features</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>1. Smart Cart + Persistent Storage</h3>
+          <p>Items in cart persist in <code>localStorage</code>. Auto-update totals and checkout flow included.</p>
+        </article>
+        <article>
+          <h3>2. Interactive Product Filtering</h3>
+          <p>Search and category filters happen live for fast discovery. Works on desktop & mobile.</p>
+        </article>
+        <article>
+          <h3>3. Health Advisory and Safety</h3>
+          <p>Each product has ingredient callouts, usage notes, and recommended doctor consult options.</p>
+        </article>
+        <article>
+          <h3>4. Seamless UX + Accessibility</h3>
+          <p>High contrast, keyboard-friendly controls, and ARIA labels to support inclusive access.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>How long is shipping?</summary>
+        <p>Standard delivery in 3-5 business days. Expedited options available at checkout.</p>
+      </details>
+      <details>
+        <summary>Are the supplements FDA approved?</summary>
+        <p>Our formulations are third-party lab-tested and compliant with FDA guidelines for dietary supplements.</p>
+      </details>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact & Support</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" type="text" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+        <button class="btn primary" type="submit">Send Inquiry</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +1 (800) 555-4242</p>
+        <p><strong>Email:</strong> support@vitalvantage.com</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" class="btn secondary" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary">
+      <div><strong>Subtotal:</strong> $<span id="cartTotal">0.00</span></div>
+      <button id="checkoutBtn" class="btn primary">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
