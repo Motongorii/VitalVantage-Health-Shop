@@ -103,7 +103,21 @@
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-summary">
-      <div><strong>Subtotal:</strong> $<span id="cartTotal">0.00</span></div>
+      <div><strong>Payment method:</strong>
+        <select id="paymentMethod" aria-label="Payment method">
+          <option value="mpesa">M-Pesa</option>
+          <option value="card">Credit/Debit Card</option>
+        </select>
+      </div>
+      <div>
+        <strong>Pickup / Delivery Address:</strong>
+        <select id="addressSelect" aria-label="Pick delivery address"></select>
+      </div>
+      <div class="add-address">
+        <input id="newAddressInput" type="text" placeholder="Enter new address for delivery" />
+        <button id="addAddressBtn" class="btn secondary">Add Address</button>
+      </div>
+      <div><strong>Subtotal:</strong> KES <span id="cartTotal">0.00</span></div>
       <button id="checkoutBtn" class="btn primary">Proceed to Checkout</button>
     </div>
   </aside>
